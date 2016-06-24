@@ -1,0 +1,507 @@
+/*
+Theme Name: Smart Yields
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: smart-yields
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Smart Yields is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/**
+ * Mixins
+ */
+.clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/**
+ * Typography
+ */
+@fontMontserrat: "Montserrat", sans-serif;
+@fontOpenSans: "Open Sans", sans-serif;
+
+/**
+ * Color
+ */
+@colorWhite: rgb(255,255,255);
+@colorGrayLighter: rgb(239,237,238);
+@colorGray: rgb(121,124,123);
+@colorGrayDark: rgb(73,76,75);
+@colorGrayDarker: rgb(42,43,42);
+@colorBlack: rgb(18, 19, 18);
+
+@colorGreen: rgb(52,198,163);
+@colorBlue: rgb(34,167,240);
+@colorOrange: rgb(255,152,29);
+@colorPurple: rgb(155,89,182);
+@colorPink: rgb(242,97,141);
+
+/**
+ * General
+ */
+*, *:before, *:after {
+     box-sizing: inherit;
+ }
+html {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Montserrat", sans-serif;
+    color: @colorGrayDarker;
+    background: url(images/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: @colorWhite;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: @colorGrayDarker;
+    }
+
+}
+.section {
+    background: @colorGrayLighter;
+    position: relative;
+}
+.benefit {
+    background: @colorWhite;
+}
+
+
+/**
+ * Header Navar
+ */
+nav.navbar {
+    // Logo Container
+    .navbar-brand {
+        color: @colorWhite;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-top: -5px;
+        .logo {
+            margin-right: 5px;
+        }
+    }
+    // Menu in Navbar
+    .navbar-nav {
+        a {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: @colorWhite;
+        }
+    }
+}
+
+// # Slide 1
+.jumbotron {
+    position: relative;
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+    height: 100vw;
+    @media (min-width: 768px) {
+        height: 60vw;
+    }
+    @media (min-width: 1400px) {
+        background: url(images/bg.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .tagline {
+        color: @colorWhite;
+        font-size: 2.8rem;
+        line-height: 1.4;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 0 40px;
+        margin-top: 35%;
+        @media ( min-width: 480px ) {
+            font-size: 3.5rem;
+            margin-top: 35%;
+        }
+        @media(min-width: 768px) {
+            margin-top: 25%;
+            font-size: 4vw;
+        }
+    }
+    .learn-more {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        width: 140px;
+        padding: 8px 12px;
+        border: 3px solid @colorWhite;
+        color: @colorWhite;
+        transition: background 0.4s ease, border-color 0.4s ease;
+        &:hover {
+            text-decoration: none;
+            background: @colorGreen;
+            border-color: @colorGreen;
+        }
+    }
+}
+
+// # Features
+#features {
+    .feature {
+        padding: 0 40px 40px;
+        &:first-child {
+            padding: 40px 40px 0;
+        }
+        @media ( min-width: 768px ) {
+            padding: 40px;
+        }
+        @media ( min-width: 1200px ) {
+            &:first-child {
+                margin-left: 12.5%;
+            }
+        }
+        .image-wrapper {
+            width: 125px;
+            height: 125px;
+            margin: 0 auto;
+            img {
+                width: 100%;
+                height: auto;
+                min-width: none;
+            }
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 8px;
+        }
+        p {
+            text-align: center;
+            font-size: 13px;
+            font-family: @fontOpenSans;
+            color: @colorGray;
+        }
+    }
+}
+
+// # Benefits
+#benefits {
+    padding: 0;
+    background: @colorWhite;
+    overflow: hidden;
+    @media ( min-width: 768px ) {
+        padding: 70px 0;
+    }
+    .benefit {
+        padding: 40px 0;
+        .clearfix();
+        .title {
+            font-size: 21px;
+            line-height: 1.5;
+            margin-top: 60px;
+        }
+        .content {
+            font-family: @fontOpenSans;
+            font-size: 15px;
+            font-weight: 400;
+            color: @colorGrayDark;
+        }
+        .large.left {
+            .clearfix();
+            img {
+                float: right;
+                @media( min-width: 768px ) {
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+// # Team
+#team {
+    color: @colorWhite;
+    background: transparent;
+    padding: 100px 0;
+    text-align: center;
+    .member {
+        min-height: 217px;
+        margin-bottom: 25px;
+        .image-wrapper {
+            width: 125px;
+            height: 125px;
+            background: @colorGray;
+            border-radius: 75px;
+            display: inline-block;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: auto;
+                max-width: none;
+            }
+        }
+        .name {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    }
+    :nth-child(4n+1).member {
+        clear: left;
+    }
+}
+
+// # News
+#news {
+    @media ( min-width: 768px ) {
+        overflow: hidden;
+    }
+    .title-block {
+        color: @colorWhite;
+        background: @colorBlack;
+        padding: 40px;
+        height: 250px;
+        @media ( min-width: 768px ) {
+            height: 50vw;
+        }
+        @media ( min-width: 1200px ) {
+            height: 25vw;
+        }
+    }
+    .article {
+        display: block;
+        height: 100vw;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        @media ( min-width: 768px ) {
+            height: 50vw;
+        }
+        @media ( min-width: 1200px ) {
+            height: 25vw;
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            background: fadeout(@colorBlack, 25%);
+        }
+        .image-wrapper {
+            position: absolute;
+            height: 102%;
+            z-index: 1;
+            img {
+                width: auto;
+                height: 100%;
+                max-width: none;
+            }
+        }
+        .content {
+            height: 76%;
+            position: relative;
+            z-index: 3;
+            color: @colorWhite;
+            border: 3px solid @colorWhite;
+            padding: 20px;
+            margin: 40px;
+            .overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: fadeout(@colorBlack, 20%);
+
+            }
+            h2 {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+            .excerpt {
+                font-family: @fontOpenSans;
+            }
+        }
+    }
+    // .article:nth-child(2) .overlay {
+    //     background: fadeout(@colorGreen, 30%);
+    // }
+    // .article:nth-child(3) .overlay {
+    //     background: fadeout(@colorBlue, 30%);
+    // }
+    // .article:nth-child(4) .overlay {
+    //     background: fadeout(@colorOrange, 30%);
+    // }
+}
+
+// #contact
+#contact {
+    background: transparent;
+    height: 330px;
+    .info-block {
+        background: @colorBlack;
+        color: @colorWhite;
+        height: 100%;
+        padding: 40px;
+        ul.contact-info {
+            padding: 0;
+            li {
+                list-style: none;
+            }
+        }
+    }
+    #contact-form {
+        padding: 0;
+        overflow: hidden;
+        div[role="form"] {
+            width: 100%;
+            height: 100%;
+            color: @colorWhite;
+            background: @colorBlack;
+            padding: 40px;
+            input[type=text],
+            input[type=email],
+            textarea {
+                padding: 10px;
+                color: @colorGrayDarker;
+            }
+            textarea {
+                max-height: 169px;
+            }
+            input[type=submit] {
+                background: @colorGreen;
+                width: 100%;
+                border: none;
+                padding: 12px 20px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .map-container {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// # Footer
+#colophon {
+    padding: 15px 40px;
+    color: @colorWhite;
+    background: fadeout(@colorBlack, 0%);
+    .clearfix();
+    .copyright {
+        margin-top: 9px;
+        float: left;
+    }
+    .sponsor {
+        float: right;
+    }
+}
+
+/**
+ * Single News Article
+ */
+body.single {
+    #main {
+        margin-top: 51px;
+        margin-bottom: 51px;
+        padding: 40px;
+        background: @colorWhite;
+        @media (min-width: 768px) {
+            margin-top: 120px;
+        }
+        article {
+            .entry-title {
+                margin-top: 15px;
+            }
+            .post-thumbnail {
+                height: 400px;
+                width: 100%;
+                margin: 20px auto 30px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+
+/**
+ * Request a Demo Form
+ */
+form.sml_subscribe {
+    position: absolute;
+    width: 100%;
+    background: fadeout(@colorGrayDarker, 10%);
+    padding: 20px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .clearfix();
+    @media(min-width: 768px) {
+        width: 40vw;
+    }
+    .sml_email {
+        display: block;
+        float: left;
+        width: 65%;
+        margin: 0;
+        input {
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-style: oblique;
+            font-family: 'Georgia', serif;
+            padding: 5px;
+        }
+        .sml_emaillabel {
+            display: none;
+        }
+    }
+    .sml_submit {
+        display: block;
+        float: right;
+        width: 30%;
+        margin: 0;
+        input {
+             background: @colorGreen;
+             color: @colorWhite;
+             font-size: 12px;
+             text-transform: uppercase;
+             border-radius: 0;
+             width: 100%;
+             height: 100%;
+        }
+    }
+
+}

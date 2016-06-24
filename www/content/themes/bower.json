@@ -1,0 +1,25 @@
+{
+  "name": "smart-yields",
+  "authors": [
+    "Justin Hedani <jkhedani@gmail.com>"
+  ],
+  "description": "A WordPress theme for Smart Yields",
+  "main": "functions.php",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "smart",
+    "yields"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
