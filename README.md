@@ -24,6 +24,7 @@
         $ git submodule add https://github.com/WordPress/WordPress
 
 8. Start the virtual machine:
+
         $ vagrant up
 
 9. Create a new local database entry. See Database Configuration section.
