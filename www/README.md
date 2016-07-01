@@ -1,41 +1,23 @@
-# Setting Up Your WordPress Environment
+# WordPress
+A portable version
+> NOTE: IF you haven't already read the `README.md` in the root directory of this build please do so before continuing.
 
-1. Install WordPress:
+### Local Theme Configuration
 
-        $ git submodule update --init
+1. If you wish to use less to compile your style.css
 
-2. Copy local-config-sample.php to local-config.php
-3. Move into theme and update:
-  - Composer
-  - NPM
-  - Bower
+      $ mv content/themes/gulpfile.js content/themes/yourtheme
+      $ cd content/themes/yourtheme
+      $ gulp
 
-# Created Users
+2. If you want to add the following modules via Bower
 
-Author
-sjenkins@calcharters.com
-Fmk$!dtk&&gg#IG(nGg#%O1&
+  - Bootstrap
+  - Font Awesome
+  - jQuery (is needed by Bootstrap here so you'll have to copies including the native install with WP : / )
+  - scrollreveal
 
-Editor
-mfox@calcharters.org
-WSAG93!*ODgwuF3HJ))htIG)
 
-Author
-lsinger@calcharters.org
-sQkbZDoLccf1OsBxa^I4aA88
-
-Author
-lwang@calcharters.org
-LaAtY9lx%LkDkgvB3q@x713M
-
-Author
-slevin@calcharters.org
-mpja0pJzb2mnlJQv@UbHxEUE
-
-Author
-jmandell@calcharters.org
-oj6NpaX#lw5h8Wq6sg@*i2gW
-
-Author
-strunk@calcharters.org
-lOqrTHauOpe%LK%bxbzVNY))
+  $ mv content/themes/gulpfile.js content/themes/yourtheme
+  $ cd content/themes/yourtheme
+  $ bower install

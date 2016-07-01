@@ -27,10 +27,11 @@
 
         $ vagrant up
 
-9. Create a new local database entry. See Database Configuration section.
+9. Create a new local database entry. See Local Database Configuration section.
 
 
-### Databases
+### Local Database Configuration
+
 1. Use Sequel Pro (or any native database manager) and add the following settings (access over ssh)
 
     MySQL Host: 127.0.0.1
@@ -42,25 +43,8 @@
 
  2. Create a new table based on the name you put in your local config file. (e.g. wp_yourproject)
 
-### Theme Configuration
+ > NOTE: For WordPress use the UTF8 collation
 
-NOTE: Using a customized version of
-Copy the gulpfile and bower file if youd like to install the following by default.
+### Remote Deployment & Usage
 
-1. Bootstrap
-2. Font Awesome
-3. jQuery (is needed by Bootstrap here so you'll have to copies including the native install with WP : / )
-4. scrollreveal
-
-
-### Prepare Database for Import (WP-CLI)
-@note: We probably shouldn't enable an easy way to send local data up
-1. (in progress)
-
-### Updating Content
-1. Configure retrieve_latest_content script
-2. Run script
-
-### Deployment
-1. SSH Keys (Local <--> Remote Repo <--> Remote Server)
-2. Configure deploy.rb (www/config)
+See `www/README.md` for more information
