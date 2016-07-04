@@ -21,13 +21,41 @@
 6. Initialize the www/ folder with Git. This will be the directory you'll use to deploy your build.
 7. Install WordPress via Git submodules:
 
-        $ git submodule add https://github.com/WordPress/WordPress
+        $ git submodule add https://github.com/WordPress/WordPress wp
+        $ cd wp
+        $ git checkout 4.X.X
+
+> NOTE: If you don't checkout a specific version you'll be working off master which
+        is their development branch
 
 8. Start the virtual machine:
 
         $ vagrant up
 
-9. Create a new local database entry. See Local Database Configuration section.
+9. Configure server to use pretty permalinks:
+
+        $ vagrant ssh
+        $ sudo nano /etc/apache2/sites-available/default
+
+    Check to make sure `AllowOverride` is set to `All`
+
+        DocumentRoot /var/www
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride All
+        </Directory>
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride All
+                Order allow,deny
+                allow from all
+        </Directory>
+
+    Then restart the server:
+
+        $ sudo service apache2 restart
+
+10. Create a new local database entry. See Local Database Configuration section.
 
 
 ### Local Database Configuration
